@@ -4,7 +4,7 @@
 
 $newAlbum=$_POST;
 
- if (isset($newAlbum)) {
+ if (!empty($newAlbum)) {
     //$jsonObj = json_encode($newAlbum);
     //$jsonNewAlbum = file_post_contents('albums.json');
 
@@ -17,6 +17,8 @@ $newAlbum=$_POST;
     $albums_json = json_encode($albumsArray);
 
     file_put_contents('albums.json', $albums_json);
+
+    $newAlbum=[];
 
     header('Location: ./index.php');
 }
