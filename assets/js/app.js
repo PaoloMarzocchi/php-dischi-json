@@ -4,7 +4,16 @@ createApp({
     data() {
         return {
             albums: [],
-            api_url: 'script.php'
+            api_url: 'script.php',
+            flagActiveAlbum: false,
+            activeAlbum: {}
+        }
+    },
+    methods: {
+        showAlbum(i) {
+            this.flagActiveAlbum = !this.flagActiveAlbum;
+            this.activeAlbum = this.albums[i];
+
         }
     },
     mounted() {

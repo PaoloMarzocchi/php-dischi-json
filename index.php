@@ -11,25 +11,46 @@
     
 
 <div id="app">
-    <header>
-        <h1 class="text-center p-3">OUR TOP 6 ALBUMS!</h1>
+    <header class="text-center p-3">
+        <h1>OUR TOP SIX!</h1>
+        <small class="text-light">Six albums that you have to listen!</small>
     </header>
-    <main>
+    <main class="py-4">
         <div class="container">
             <div class="row gy-4">
-                <div class="col-4" v-for="album in albums">
-                    <div class="card">
+                <div class="col-4" v-for="(album,index) in albums">
+                    <div class="card" @click='showAlbum(index)'>
                         <img class="card-img-top" :src="album.poster" alt="Title" />
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h4 class="card-title">{{album.title}}</h4>
-                            <p class="card-text">{{album.author}}</p>
                             <p class="card-text">{{album.year}}</p>
+                            <p class="card-text fs-4 fw-bold">{{album.author}}</p> 
                             <p class="card-text">{{album.genre}}</p>
                         </div>
                     </div>
                     
                 </div>
             </div>
+        </div>
+
+        <div class="active-album z-1 position-fixed top-0 start-0 vw-100 vh-100" v-if="flagActiveAlbum">
+        
+            <div class="row mx-auto h-100 position-relative w-50 justify-content-center align-items-center">
+                <div class="col-8">
+                    <div class="card">
+                        <img class="card-img-top" :src="activeAlbum.poster" alt="Title" />
+                        <div class="card-body text-center">
+                            <h4 class="card-title">{{activeAlbum.title}}</h4>
+                            <p class="card-text">{{activeAlbum.year}}</p>
+                            <p class="card-text fs-4 fw-bold">{{activeAlbum.author}}</p> 
+                            <p class="card-text">{{activeAlbum.genre}}</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <button class="btn btn-secondary position-absolute" @click="flagActiveAlbum = !flagActiveAlbum">&cross;</button>
+    
         </div>
     </main>
     

@@ -1,0 +1,39 @@
+#app {
+
+    & header {
+        background-color: rgb(73, 12, 12);
+        box-shadow: 0px 1px 3px 0px black;
+
+        & h1 {
+            color: blanchedalmond;
+        }
+    }
+
+    & main {
+        background-color: rgba(73, 12, 12, 0.521);
+
+        .card {
+            background-color: rgb(73, 12, 12);
+            color: blanchedalmond;
+            box-shadow: 8px 7px 4px 0px rgb(39, 4, 4);
+        }
+
+        .active-album {
+            background-color: rgba(0, 0, 0, 0.521);
+            display: flex;
+
+            .card {
+                background-color: rgb(102, 15, 15);
+                color: blanchedalmond;
+                border: 1px solid black;
+                box-shadow: 0px 0px 20px 10px rgb(180, 142, 142);
+            }
+
+            .btn {
+                top: 1rem;
+                right: 20rem;
+                background-color: rgb(163, 24, 24);
+            }
+        }
+    }
+}
