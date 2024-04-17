@@ -11,7 +11,7 @@ createApp({
         axios
             .get(this.api_url)
             .then(resp => {
-                console.log(resp);
+                //console.log(resp);
                 this.albums = resp.data;
             })
             .catch(err => {

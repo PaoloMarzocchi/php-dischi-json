@@ -11,9 +11,28 @@
     
 
 <div id="app">
-    <ul>
-        <li v-for="album in albums"> {{album.title}} </li>
-    </ul>
+    <header>
+        <h1 class="text-center p-3">OUR TOP 6 ALBUMS!</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-4" v-for="album in albums">
+                    <div class="card">
+                        <img class="card-img-top" :src="album.poster" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">{{album.title}}</h4>
+                            <p class="card-text">{{album.author}}</p>
+                            <p class="card-text">{{album.year}}</p>
+                            <p class="card-text">{{album.genre}}</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+    
 </div>
 
 
