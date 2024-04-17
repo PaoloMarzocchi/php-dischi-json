@@ -16,6 +16,13 @@
             background-color: rgb(73, 12, 12);
             color: blanchedalmond;
             box-shadow: 8px 7px 4px 0px rgb(39, 4, 4);
+
+
+
+        }
+
+        .card:hover {
+            cursor: pointer;
         }
 
         .active-album {
