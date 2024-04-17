@@ -3,7 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            $testJS: [],
+            albums: [],
             api_url: 'script.php'
         }
     },
@@ -12,7 +12,7 @@ createApp({
             .get(this.api_url)
             .then(resp => {
                 console.log(resp);
-                this.$testJS = resp.data;
+                this.albums = resp.data;
             })
             .catch(err => {
                 console.log(err.message);
